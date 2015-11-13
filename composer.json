@@ -1,0 +1,19 @@
+{
+    "name": "soneritics/beslistshopitem",
+    "type": "library",
+    "description": "Beslist.nl ShopItem implementation for PHP",
+    "homepage": "https://github.com/Soneritics/BeslistShopItem",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.5.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*",
+        "squizlabs/php_codesniffer": "dev-master",
+        "satooshi/php-coveralls": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {"ShopItem\\": "Soneritics/Beslist/ShopItem/"}
+    }
+}
