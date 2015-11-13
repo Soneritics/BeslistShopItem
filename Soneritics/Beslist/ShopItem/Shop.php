@@ -22,88 +22,80 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace Beslist;
-
-use Beslist\ShopItem;
-use Beslist\ShopItem\ApiKey;
-use Beslist\ShopItem\Shop;
-use Beslist\ShopItem\Item;
+namespace Beslist\ShopItem;
 
 /**
  * 
  * @author Jordi Jolink <mail@jordijolink.nl>
  * @since  13-11-2015
  */
-class ShopItem
+class Shop
 {
     /**
      *
-     * @var ApiKey
+     * @var int
      */
-    private $apiKey;
+    protected $id;
+
+    /**
+     *
+     * @var string
+     */
+    protected $name;
 
     /**
      * 
-     * @param ApiKey $apiKey
+     * @param int $id
+     * @param string $name
      */
-    public function __construct(ApiKey $apiKey = null)
+    public function __construct($id = null, $name = null)
     {
-        if ($apiKey !== null) {
-            $this->setApiKey($apiKey);
+        if ($id !== null) {
+            $this->setId($id);
+        }
+
+        if ($name !== null) {
+            $this->setName($name);
         }
     }
 
     /**
      * 
-     * @param ApiKey $apiKey
-     * @return ShopItem
+     * @return int
      */
-    public function setApiKey(ApiKey $apiKey)
+    public function getId()
     {
-        $this->apiKey = $apiKey;
+        return $this->id;
+    }
+
+    /**
+     * 
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * 
+     * @param int $id
+     * @return \Beslist\ShopItem\Shop
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
         return $this;
     }
 
     /**
      * 
-     * @return array
+     * @param string $name
+     * @return \Beslist\ShopItem\Shop
      */
-    public function getShops()
+    public function setName($name)
     {
-        return [];
-    }
-
-    /**
-     * 
-     * @param Shop $shop
-     * @param type $itemId
-     * @return Item
-     */
-    public function getItem(Shop $shop, $itemId)
-    {
-
-    }
-
-    /**
-     * 
-     * @param Shop $shop
-     * @param array $itemIds
-     * @return array
-     */
-    public function getItems(Shop $shop, array $itemIds)
-    {
-        $result = [];
-
-        if (!empty($itemIds)) {
-            foreach ($itemIds as $itemIds) {
-                $item = $this->getItem($shop, $itemId);
-
-                if ($item->isValid()) {
-                    $result[] = $item;
-                }
-            }
-        }
-
-        return $result;
+        $this->name = $name;
+        return $this;
     }
 }

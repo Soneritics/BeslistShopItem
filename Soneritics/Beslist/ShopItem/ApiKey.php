@@ -22,88 +22,49 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace Beslist;
-
-use Beslist\ShopItem;
-use Beslist\ShopItem\ApiKey;
-use Beslist\ShopItem\Shop;
-use Beslist\ShopItem\Item;
+namespace Beslist\ShopItem;
 
 /**
  * 
  * @author Jordi Jolink <mail@jordijolink.nl>
  * @since  13-11-2015
  */
-class ShopItem
+class ApiKey
 {
     /**
      *
-     * @var ApiKey
+     * @var string
      */
-    private $apiKey;
+    protected $apiKey;
 
     /**
      * 
-     * @param ApiKey $apiKey
+     * @param string $apiKey
      */
-    public function __construct(ApiKey $apiKey = null)
+    public function __construct($apiKey = null)
     {
         if ($apiKey !== null) {
-            $this->setApiKey($apiKey);
+            $this->set($apiKey);
         }
     }
 
     /**
      * 
-     * @param ApiKey $apiKey
-     * @return ShopItem
+     * @return string
      */
-    public function setApiKey(ApiKey $apiKey)
+    public function get()
+    {
+        return $this->apiKey;
+    }
+
+    /**
+     * 
+     * @param string $apiKey
+     * @return \Beslist\ShopItem\ApiKey
+     */
+    public function set($apiKey)
     {
         $this->apiKey = $apiKey;
         return $this;
-    }
-
-    /**
-     * 
-     * @return array
-     */
-    public function getShops()
-    {
-        return [];
-    }
-
-    /**
-     * 
-     * @param Shop $shop
-     * @param type $itemId
-     * @return Item
-     */
-    public function getItem(Shop $shop, $itemId)
-    {
-
-    }
-
-    /**
-     * 
-     * @param Shop $shop
-     * @param array $itemIds
-     * @return array
-     */
-    public function getItems(Shop $shop, array $itemIds)
-    {
-        $result = [];
-
-        if (!empty($itemIds)) {
-            foreach ($itemIds as $itemIds) {
-                $item = $this->getItem($shop, $itemId);
-
-                if ($item->isValid()) {
-                    $result[] = $item;
-                }
-            }
-        }
-
-        return $result;
     }
 }

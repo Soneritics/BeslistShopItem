@@ -22,19 +22,16 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace Beslist;
+namespace Beslist\REST;
 
-use Beslist\ShopItem;
 use Beslist\ShopItem\ApiKey;
-use Beslist\ShopItem\Shop;
-use Beslist\ShopItem\Item;
 
 /**
  * 
  * @author Jordi Jolink <mail@jordijolink.nl>
  * @since  13-11-2015
  */
-class ShopItem
+abstract class AbstractRESTCommand
 {
     /**
      *
@@ -46,64 +43,18 @@ class ShopItem
      * 
      * @param ApiKey $apiKey
      */
-    public function __construct(ApiKey $apiKey = null)
-    {
-        if ($apiKey !== null) {
-            $this->setApiKey($apiKey);
-        }
-    }
-
-    /**
-     * 
-     * @param ApiKey $apiKey
-     * @return ShopItem
-     */
-    public function setApiKey(ApiKey $apiKey)
+    public function __construct(ApiKey $apiKey)
     {
         $this->apiKey = $apiKey;
-        return $this;
     }
 
     /**
      * 
-     * @return array
      */
-    public function getShops()
-    {
-        return [];
-    }
+    protected abstract function getCommandURL();
 
     /**
      * 
-     * @param Shop $shop
-     * @param type $itemId
-     * @return Item
      */
-    public function getItem(Shop $shop, $itemId)
-    {
-
-    }
-
-    /**
-     * 
-     * @param Shop $shop
-     * @param array $itemIds
-     * @return array
-     */
-    public function getItems(Shop $shop, array $itemIds)
-    {
-        $result = [];
-
-        if (!empty($itemIds)) {
-            foreach ($itemIds as $itemIds) {
-                $item = $this->getItem($shop, $itemId);
-
-                if ($item->isValid()) {
-                    $result[] = $item;
-                }
-            }
-        }
-
-        return $result;
-    }
+    protected abstract function execute();
 }
