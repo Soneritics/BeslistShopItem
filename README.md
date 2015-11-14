@@ -19,6 +19,10 @@ the ‘Shopitem API’.
 
 - PHP 5.6
 
+## Class Diagram ##
+![Class Diagram](ClassDiagram.png)
+
+
 ### Example ###
 
 ```php

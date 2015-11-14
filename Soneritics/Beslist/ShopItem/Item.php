@@ -47,6 +47,12 @@ class Item
 
     /**
      *
+     * @var ApiKey
+     */
+    private $apiKey;
+
+    /**
+     *
      * @var double
      */
     private $price;
@@ -89,6 +95,7 @@ class Item
     public function __construct($id, ApiKey $apiKey)
     {
         $this->id = $id;
+        $this->apiKey = $apiKey;
         $this->reload();
     }
 

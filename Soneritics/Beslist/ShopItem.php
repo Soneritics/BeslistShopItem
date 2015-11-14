@@ -76,7 +76,7 @@ class ShopItem
     /**
      * 
      * @param Shop $shop
-     * @param type $itemId
+     * @param string $itemId
      * @return Item
      */
     public function getItem(Shop $shop, $itemId)

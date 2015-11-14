@@ -24,37 +24,19 @@
  */
 namespace Beslist\REST;
 
-use Beslist\ShopItem\ApiKey;
-
 /**
  * 
  * @author Jordi Jolink <mail@jordijolink.nl>
  * @since  13-11-2015
  */
-abstract class AbstractRESTCommand
+abstract class RESTGETCommand extends RESTCommand
 {
     /**
-     *
-     * @var ApiKey
-     */
-    private $apiKey;
-
-    /**
      * 
-     * @param ApiKey $apiKey
+     * @return mixed
      */
-    public function __construct(ApiKey $apiKey)
+    protected function get()
     {
-        $this->apiKey = $apiKey;
+        
     }
-
-    /**
-     * 
-     */
-    protected abstract function getCommandURL();
-
-    /**
-     * 
-     */
-    protected abstract function execute();
 }

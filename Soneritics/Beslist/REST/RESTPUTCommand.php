@@ -29,7 +29,7 @@ namespace Beslist\REST;
  * @author Jordi Jolink <mail@jordijolink.nl>
  * @since  13-11-2015
  */
-abstract class AbstractRESTPUTCommand extends AbstractRESTCommand
+abstract class RESTPUTCommand extends RESTCommand
 {
     /**
      * 
