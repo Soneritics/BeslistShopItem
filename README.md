@@ -21,10 +21,6 @@ the ‘Shopitem API’.
 - PHP compiled with cURL
 
 
-## Class Diagram ##
-![Class Diagram](ClassDiagram.png)
-
-
 ### Example ###
 ```php
 # Initialisation
@@ -55,3 +51,8 @@ if ($item->isValid()) {
   var_dump($saved); // True or false
 }
 ```
+
+
+## Class Diagram ##
+![Class Diagram](ClassDiagram.png)
+
