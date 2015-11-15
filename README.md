@@ -1,4 +1,4 @@
-# BeslistShopItem - Beslist.nl ShopItem API #
+Beslist.nl ShopItem API #
 
 [![Build Status](https://api.travis-ci.org/Soneritics/BeslistShopItem.svg?branch=master)](https://travis-ci.org/Soneritics/BeslistShopItem)
 [![Coverage Status](https://coveralls.io/repos/Soneritics/BeslistShopItem/badge.svg?branch=master)](https://coveralls.io/r/Soneritics/BeslistShopItem?branch=master)
@@ -15,16 +15,43 @@ developed enabling near real-time updates to a number of properties of inventory
 context of this API those webshop inventory items are referred to as ‘shopitems’ and the API is called
 the ‘Shopitem API’.
 
-## Minimum Requirements ##
 
+## Minimum Requirements ##
 - PHP 5.6
+- PHP compiled with cURL
+
 
 ## Class Diagram ##
 ![Class Diagram](ClassDiagram.png)
 
 
 ### Example ###
-
 ```php
-// @todo: Add an example
+# Initialisation
+$apiKey = new ApiKey('your-api-key-here');
+$shopItem = new ShopItem($apiKey);
+
+# Fetching Shops
+$shops = $shopItem->getShops();
+print_r($shops); // array of Shop objects
+
+# Looping shops and fetching items
+$items = ['1234', '1235', '1236'];
+foreach ($shops as $shop) {
+  $items = $shopItem->getItems($items);
+  print_r($items); // array of Item objects
+}
+
+# Updating an item
+$item = $shopItem->getItem($shop, '1234');
+if ($item->isValid()) {
+  $item
+    ->setPrice(24.95)
+    ->setDiscountPrice(19.99)
+    ->setDeliveryCostNl(0)
+    ->setDeliveryCostBe(1.95);
+
+  $saved = $item->save();
+  var_dump($saved); // True or false
+}
 ```
