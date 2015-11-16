@@ -5,7 +5,7 @@ php:
 script:
 - vendor/bin/phpcs --standard=PSR1,PSR2 Soneritics/Beslist/
 - mkdir -p build/logs
-- vendor/bin/phpunit --coverage-clover build/logs/clover.xml tests/
+- vendor/bin/phpunit --coverage-clover build/logs/clover.xml --whitelist Soneritics/ tests/
 
 after_script:
   - php vendor/bin/coveralls -v
