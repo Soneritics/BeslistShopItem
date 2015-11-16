@@ -4,7 +4,6 @@
 [![Coverage Status](https://coveralls.io/repos/Soneritics/BeslistShopItem/badge.svg?branch=master)](https://coveralls.io/r/Soneritics/BeslistShopItem?branch=master)
 ![License](http://img.shields.io/badge/license-MIT-green.svg)
 
-by
 * [@Soneritics](https://github.com/Soneritics) - Jordi Jolink
 
 
@@ -24,8 +23,8 @@ the ‘Shopitem API’.
 ### Example ###
 ```php
 # Initialisation
-$apiKey = new ApiKey('your-api-key-here');
-$shopItem = new ShopItem($apiKey);
+$restConfig = new RESTConfig('your-api-key-here');
+$shopItem = new ShopItem($restConfig);
 
 # Fetching Shops
 $shops = $shopItem->getShops();
