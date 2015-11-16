@@ -5,13 +5,14 @@
     "homepage": "https://github.com/Soneritics/BeslistShopItem",
     "license": "MIT",
     "minimum-stability": "dev",
+	"prefer-stable": true,
     "require": {
         "php": ">=5.5.0"
     },
     "require-dev": {
         "phpunit/phpunit": "*",
-        "squizlabs/php_codesniffer": "dev-master",
-        "satooshi/php-coveralls": "dev-master"
+        "squizlabs/php_codesniffer": "*",
+        "satooshi/php-coveralls": "*"
     },
     "autoload": {
         "psr-4": {"Beslist\\": "Soneritics/Beslist/"}
