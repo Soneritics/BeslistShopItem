@@ -25,7 +25,9 @@
 namespace Beslist\Exception;
 
 /**
- * 
+ * ApiKeyInvalidException
+ * Exception when an API key is invalid.
+ *
  * @author Jordi Jolink <mail@jordijolink.nl>
  * @since  13-11-2015
  */

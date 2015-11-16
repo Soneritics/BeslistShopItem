@@ -25,7 +25,7 @@
 namespace Beslist\ShopItem;
 
 /**
- * 
+ *
  * @author Jordi Jolink <mail@jordijolink.nl>
  * @since  13-11-2015
  */
@@ -44,7 +44,7 @@ class Shop
     protected $name;
 
     /**
-     * 
+     *
      * @param int $id
      * @param string $name
      */
@@ -60,7 +60,7 @@ class Shop
     }
 
     /**
-     * 
+     *
      * @return int
      */
     public function getId()
@@ -69,7 +69,7 @@ class Shop
     }
 
     /**
-     * 
+     *
      * @return string
      */
     public function getName()
@@ -78,7 +78,7 @@ class Shop
     }
 
     /**
-     * 
+     *
      * @param int $id
      * @return \Beslist\ShopItem\Shop
      */
@@ -89,7 +89,7 @@ class Shop
     }
 
     /**
-     * 
+     *
      * @param string $name
      * @return \Beslist\ShopItem\Shop
      */

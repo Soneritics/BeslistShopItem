@@ -25,7 +25,9 @@
 namespace Beslist\Exception;
 
 /**
- * 
+ * NoApiKeyProvidedException
+ * Exception when an API key was not provided for a call.
+ *
  * @author Jordi Jolink <mail@jordijolink.nl>
  * @since  13-11-2015
  */

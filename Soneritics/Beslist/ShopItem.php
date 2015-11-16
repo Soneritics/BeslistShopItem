@@ -30,7 +30,7 @@ use Beslist\ShopItem\Shop;
 use Beslist\ShopItem\Item;
 
 /**
- * 
+ *
  * @author Jordi Jolink <mail@jordijolink.nl>
  * @since  13-11-2015
  */
@@ -43,7 +43,7 @@ class ShopItem
     private $apiKey;
 
     /**
-     * 
+     *
      * @param ApiKey $apiKey
      */
     public function __construct(ApiKey $apiKey = null)
@@ -54,7 +54,7 @@ class ShopItem
     }
 
     /**
-     * 
+     *
      * @param ApiKey $apiKey
      * @return ShopItem
      */
@@ -65,7 +65,7 @@ class ShopItem
     }
 
     /**
-     * 
+     *
      * @return array
      */
     public function getShops()
@@ -74,7 +74,7 @@ class ShopItem
     }
 
     /**
-     * 
+     *
      * @param Shop $shop
      * @param string $itemId
      * @return Item
@@ -85,7 +85,7 @@ class ShopItem
     }
 
     /**
-     * 
+     *
      * @param Shop $shop
      * @param array $itemIds
      * @return array

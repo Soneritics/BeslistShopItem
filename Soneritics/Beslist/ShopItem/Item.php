@@ -27,7 +27,7 @@ namespace Beslist\ShopItem;
 use Beslist\ShopItem\ApiKey;
 
 /**
- * 
+ *
  * @author Jordi Jolink <mail@jordijolink.nl>
  * @since  13-11-2015
  */
@@ -88,7 +88,7 @@ class Item
     private $deliveryTimeBe;
 
     /**
-     * 
+     *
      * @param string $id
      * @param ApiKey $apiKey
      */
@@ -100,7 +100,7 @@ class Item
     }
 
     /**
-     * 
+     *
      */
     public function reload()
     {
@@ -108,7 +108,7 @@ class Item
     }
 
     /**
-     * 
+     *
      * @return boolean
      */
     public function isValid()
@@ -117,7 +117,7 @@ class Item
     }
 
     /**
-     * 
+     *
      * @return boolean
      */
     public function save()
@@ -127,7 +127,7 @@ class Item
     }
 
     /**
-     * 
+     *
      * @return double
      */
     public function getPrice()
@@ -136,7 +136,7 @@ class Item
     }
 
     /**
-     * 
+     *
      * @return double
      */
     public function getDiscountPrice()
@@ -145,7 +145,7 @@ class Item
     }
 
     /**
-     * 
+     *
      * @return double
      */
     public function getDeliveryCostNl()
@@ -154,7 +154,7 @@ class Item
     }
 
     /**
-     * 
+     *
      * @return double
      */
     public function getDeliveryCostBe()
@@ -163,7 +163,7 @@ class Item
     }
 
     /**
-     * 
+     *
      * @return string
      */
     public function getDeliveryTimeNl()
@@ -172,7 +172,7 @@ class Item
     }
 
     /**
-     * 
+     *
      * @return string
      */
     public function getDeliveryTimeBe()
@@ -181,7 +181,7 @@ class Item
     }
 
     /**
-     * 
+     *
      * @param double $price
      * @return Item
      */
@@ -192,7 +192,7 @@ class Item
     }
 
     /**
-     * 
+     *
      * @param double $discountPrice
      * @return Item
      */
@@ -203,7 +203,7 @@ class Item
     }
 
     /**
-     * 
+     *
      * @param double $deliveryCostNl
      * @return Item
      */
@@ -214,7 +214,7 @@ class Item
     }
 
     /**
-     * 
+     *
      * @param double $deliveryCostBe
      * @return Item
      */
@@ -225,7 +225,7 @@ class Item
     }
 
     /**
-     * 
+     *
      * @param string $deliveryTimeNl
      * @return Item
      */
@@ -236,7 +236,7 @@ class Item
     }
 
     /**
-     * 
+     *
      * @param string $deliveryTimeBe
      * @return Item
      */
@@ -245,6 +245,4 @@ class Item
         $this->deliveryTimeBe = $deliveryTimeBe;
         return $this;
     }
-
-
 }

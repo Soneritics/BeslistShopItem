@@ -25,14 +25,14 @@
 namespace Beslist\REST;
 
 /**
- * 
+ *
  * @author Jordi Jolink <mail@jordijolink.nl>
  * @since  13-11-2015
  */
 abstract class RESTPUTCommand extends RESTCommand
 {
     /**
-     * 
+     *
      * @param array $data
      */
     protected function put(array $data)

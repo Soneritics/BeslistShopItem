@@ -25,7 +25,7 @@
 namespace Beslist\ShopItem;
 
 /**
- * 
+ *
  * @author Jordi Jolink <mail@jordijolink.nl>
  * @since  13-11-2015
  */
@@ -38,7 +38,7 @@ class ApiKey
     protected $apiKey;
 
     /**
-     * 
+     *
      * @param string $apiKey
      */
     public function __construct($apiKey = null)
@@ -49,7 +49,7 @@ class ApiKey
     }
 
     /**
-     * 
+     *
      * @return string
      */
     public function get()
@@ -58,7 +58,7 @@ class ApiKey
     }
 
     /**
-     * 
+     *
      * @param string $apiKey
      * @return \Beslist\ShopItem\ApiKey
      */
