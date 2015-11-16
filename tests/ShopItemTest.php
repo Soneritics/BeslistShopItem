@@ -36,6 +36,7 @@ class ShopItemTest extends TestAbstract
 {
 	public function testBuild()
 	{
+		new ShopItem;
 		$this->assertTrue(true);
 	}
 }
