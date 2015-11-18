@@ -22,45 +22,20 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace Beslist\REST;
-
-use Beslist\REST\RESTConfig;
+namespace Beslist\REST\Config;
 
 /**
- * RESTCommand
- * Class for executing REST commands to the Beslist.nl servers.
  *
  * @author Jordi Jolink <mail@jordijolink.nl>
- * @since  13-11-2015
+ * @since  18-11-2015
  */
-abstract class RESTCommand
+class Test extends RESTConfig
 {
     /**
      *
-     * @var RESTConfig
+     * @var array
      */
-    private $restConfig;
-
-    /**
-     *
-     * @param RESTConfig $restConfig
-     */
-    public function __construct(RESTConfig $restConfig)
-    {
-        $this->restConfig = $restConfig;
-    }
-
-    /**
-     *
-     * @return RESTConfig
-     */
-    protected function getConfig()
-    {
-        return $this->restConfig;
-    }
-
-    /**
-     *
-     */
-    abstract protected function execute();
+    protected $endpoints = [
+        // @todo add test endpoints
+    ];
 }

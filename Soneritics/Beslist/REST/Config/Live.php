@@ -22,49 +22,20 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace Beslist\ShopItem;
+namespace Beslist\REST\Config;
 
 /**
  *
  * @author Jordi Jolink <mail@jordijolink.nl>
- * @since  13-11-2015
+ * @since  18-11-2015
  */
-class ApiKey
+class Live extends RESTConfig
 {
     /**
      *
-     * @var string
+     * @var array
      */
-    protected $apiKey;
-
-    /**
-     *
-     * @param string $apiKey
-     */
-    public function __construct($apiKey = null)
-    {
-        if ($apiKey !== null) {
-            $this->set($apiKey);
-        }
-    }
-
-    /**
-     *
-     * @return string
-     */
-    public function get()
-    {
-        return $this->apiKey;
-    }
-
-    /**
-     *
-     * @param string $apiKey
-     * @return \Beslist\ShopItem\ApiKey
-     */
-    public function set($apiKey)
-    {
-        $this->apiKey = $apiKey;
-        return $this;
-    }
+    protected $endpoints = [
+        // @todo add live endpoints
+    ];
 }

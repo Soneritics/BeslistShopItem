@@ -25,7 +25,7 @@
 namespace Beslist;
 
 use Beslist\ShopItem;
-use Beslist\ShopItem\ApiKey;
+use Beslist\ShopItem\RESTConfig;
 use Beslist\ShopItem\Shop;
 use Beslist\ShopItem\Item;
 
@@ -38,29 +38,29 @@ class ShopItem
 {
     /**
      *
-     * @var ApiKey
+     * @var RESTConfig
      */
-    private $apiKey;
+    private $restConfig;
 
     /**
      *
-     * @param ApiKey $apiKey
+     * @param RESTConfig $restConfig
      */
-    public function __construct(ApiKey $apiKey = null)
+    public function __construct(RESTConfig $restConfig = null)
     {
-        if ($apiKey !== null) {
-            $this->setApiKey($apiKey);
+        if ($restConfig !== null) {
+            $this->RESTConfig($restConfig);
         }
     }
 
     /**
      *
-     * @param ApiKey $apiKey
+     * @param RESTConfig $restConfig
      * @return ShopItem
      */
-    public function setApiKey(ApiKey $apiKey)
+    public function setRestConfig(RESTConfig $restConfig)
     {
-        $this->apiKey = $apiKey;
+        $this->RESTConfig = $restConfig;
         return $this;
     }
 

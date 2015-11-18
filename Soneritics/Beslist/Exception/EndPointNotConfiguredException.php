@@ -22,45 +22,16 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace Beslist\REST;
-
-use Beslist\REST\RESTConfig;
+namespace Beslist\Exception;
 
 /**
- * RESTCommand
- * Class for executing REST commands to the Beslist.nl servers.
+ * NoApiKeyProvidedException
+ * Exception when an API key was not provided for a call.
  *
  * @author Jordi Jolink <mail@jordijolink.nl>
  * @since  13-11-2015
  */
-abstract class RESTCommand
+class EndPointNotConfiguredException extends \Exception
 {
-    /**
-     *
-     * @var RESTConfig
-     */
-    private $restConfig;
 
-    /**
-     *
-     * @param RESTConfig $restConfig
-     */
-    public function __construct(RESTConfig $restConfig)
-    {
-        $this->restConfig = $restConfig;
-    }
-
-    /**
-     *
-     * @return RESTConfig
-     */
-    protected function getConfig()
-    {
-        return $this->restConfig;
-    }
-
-    /**
-     *
-     */
-    abstract protected function execute();
 }

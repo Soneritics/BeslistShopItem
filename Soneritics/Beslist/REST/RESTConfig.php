@@ -24,43 +24,70 @@
  */
 namespace Beslist\REST;
 
-use Beslist\REST\RESTConfig;
+use Beslist\Exception\EndPointNotConfiguredException;
 
 /**
- * RESTCommand
- * Class for executing REST commands to the Beslist.nl servers.
  *
  * @author Jordi Jolink <mail@jordijolink.nl>
  * @since  13-11-2015
  */
-abstract class RESTCommand
+abstract class RESTConfig
 {
     /**
      *
-     * @var RESTConfig
+     * @var array
      */
-    private $restConfig;
+    protected $endpoints = [];
 
     /**
      *
-     * @param RESTConfig $restConfig
+     * @var string
      */
-    public function __construct(RESTConfig $restConfig)
+    protected $apiKey;
+
+    /**
+     *
+     * @param string $apiKey
+     */
+    public function __construct($apiKey = null)
     {
-        $this->restConfig = $restConfig;
+        if ($apiKey !== null) {
+            $this->set($apiKey);
+        }
     }
 
     /**
      *
-     * @return RESTConfig
+     * @param string $name
+     * @return string
+	 * @throw Beslist\Exception\EndPointNotConfiguredException
      */
-    protected function getConfig()
+    public function getEndPoint($name)
     {
-        return $this->restConfig;
+		if (isset($this->endpoints[$name]) {
+            return $this->endpoints[$name];
+        }
+
+        throw new EndPointNotConfiguredException($name);
     }
 
     /**
      *
+     * @return string
      */
-    abstract protected function execute();
+    public function getApiKey()
+    {
+        return $this->apiKey;
+    }
+
+    /**
+     *
+     * @param string $apiKey
+     * @return \Beslist\REST\RESTConfig
+     */
+    public function setApiKey($apiKey)
+    {
+        $this->apiKey = $apiKey;
+        return $this;
+    }
 }

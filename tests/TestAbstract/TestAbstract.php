@@ -25,10 +25,11 @@
 $root = __DIR__ . '/../../Soneritics/Beslist';
 require_once "{$root}/Exception/ApiKeyInvalidException.php";
 require_once "{$root}/Exception/NoApiKeyProvidedException.php";
+require_once "{$root}/Exception/EndpointNotConfiguredException.php";
 require_once "{$root}/REST/RESTCommand.php";
 require_once "{$root}/REST/RESTGETCommand.php";
 require_once "{$root}/REST/RESTPUTCommand.php";
-require_once "{$root}/ShopItem/ApiKey.php";
+require_once "{$root}/ShopItem/RESTConfig.php";
 require_once "{$root}/ShopItem/Shop.php";
 require_once "{$root}/ShopItem/Item.php";
 require_once "{$root}/ShopItem.php";
